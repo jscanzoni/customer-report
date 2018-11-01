@@ -78,28 +78,3 @@ for c in customers:
         up[str(y)+"-"+str(m)+'-full_users-'+c['totango_id']] = (downtime.text).replace('%','')
 
 browser.quit()
-
-#print up
-
-#print downtime.getAttribute("value")
-
-#<h2 class="pd-main-chart-downtime">None</h2>
-
-
-#reportsButton = browser.find_elements_by_xpath("//*[contains(text(), 'Reports')]")
-#reportsButton[0].click()
-
-#uptimeButton = WebDriverWait(browser, 10).until(
-#    EC.presence_of_element_located((By.CLASS_NAME.XPATH,"//*[contains(text(), 'Uptime')]")))
-#uptimeButton.click()
-
-# wait for transition then continue to fill items
-#password = WebDriverWait(browser, 10).until(
-#    EC.presence_of_element_located((By.ID, 'Passwd')))
-#password.send_keys(passwordStr)
- 
-#signInButton = browser.find_element_by_id('signIn')
-#signInButton.click()
-
-
-#https://my.pingdom.com/reports/uptime#daterange=7days&tab=uptime_tab&check=1017132
