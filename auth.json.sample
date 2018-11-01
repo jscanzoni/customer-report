@@ -1,0 +1,9 @@
+{
+    "pingdom_username" : "",
+    "pingdom_password" : "",
+    "salesforce_username" : "",
+    "salesforce_password" : "",
+    "salesforce_token" : "",
+    "query_instructions": "Please ask someone to run this query:",
+    "query" : "Select * from database"
+}

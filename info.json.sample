@@ -1,0 +1,26 @@
+[
+    {
+        "customer": "",
+        "report_name" : "",
+        "num_months": 6,
+        "totango_id" : "",
+        "pingdom_id" : "",
+        "availability": ""
+    },
+    {
+        "customer": "",
+        "report_name" : "",
+        "num_months": 6,
+        "totango_id" : "",
+        "pingdom_id" : "",
+        "availability": ""
+    },
+    {
+        "customer": "",
+        "report_name" : "",
+        "num_months": 6,
+        "totango_id" : "",
+        "pingdom_id" : "",
+        "availability": ""
+    }   
+]
