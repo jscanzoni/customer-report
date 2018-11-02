@@ -16,6 +16,7 @@ from dateutil.relativedelta import relativedelta
 import datetime
 import json
 import csv
+import os
 
 mo = int((datetime.datetime.now()-relativedelta(months=1)).strftime("%m"))
 yr = int(datetime.datetime.now().strftime("%Y"))
@@ -104,7 +105,12 @@ for c in customers:
     print c['customer']
     print (data)
 
-    with open("./exports/"+c['report_name']+"-"+str(yr)+"-"+str(mo)+".csv", 'wb') as myfile:
+    directory = './exports'
+
+    if not os.path.exists(directory):
+        os.makedirs(directory)
+
+    with open(directory+"/"+c['report_name']+"-"+str(yr)+"-"+str(mo)+".csv", 'wb') as myfile:
         #wr = csv.writer(myfile, quoting=csv.QUOTE_ALL, lineterminator='\n')
         #wr.writerow(data)
         writer = csv.writer(myfile, delimiter=',', quotechar='|', quoting=csv.QUOTE_MINIMAL, lineterminator='\n')
