@@ -1,10 +1,8 @@
 exports/*
 samples/*
-info.json
-auth.json
+info*.json
+auth*.json
 chromedriver
-
-
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

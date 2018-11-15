@@ -55,13 +55,17 @@ for c in customers:
 
             rep_date = datetime.datetime(y,m,1)+relativedelta(day=31)
 
-            while  rep_date < datetime.datetime.strptime((assetinfo["records"][rec]['CreatedDate'].split('T'))[0],'%Y-%m-%d')+relativedelta(day=31):
-                
-                if assetinfo["records"][rec]['Field'] == 'Full_Users__c':
-                    full_users = assetinfo["records"][rec]['OldValue']
-                if assetinfo["records"][rec]['Field'] == 'Standard_Users__c':
-                    standard_users = assetinfo["records"][rec]['OldValue']   
-                rec += 1
+            try:
+                while  rep_date < datetime.datetime.strptime((assetinfo["records"][rec]['CreatedDate'].split('T'))[0],'%Y-%m-%d')+relativedelta(day=31):
+                    
+                    if assetinfo["records"][rec]['Field'] == 'Full_Users__c':
+                        full_users = assetinfo["records"][rec]['OldValue']
+                    if assetinfo["records"][rec]['Field'] == 'Standard_Users__c':
+                        standard_users = assetinfo["records"][rec]['OldValue']   
+                    rec += 1
+            except:
+                full_users = 0
+                standard_users = 0
 
             lic[str(y)+"-"+str(m)+'-full_users-'+c['totango_id']] = full_users
             lic[str(y)+"-"+str(m)+'-standard_users-'+c['totango_id']] = standard_users

@@ -88,9 +88,14 @@ for c in customers:
         target_availability = c['availability']
         full_users = int(lic[str(y)+"-"+str(m)+'-full_users-'+c['totango_id']])
         standard_users = int(lic[str(y)+"-"+str(m)+'-standard_users-'+c['totango_id']])
+       
         total_licenses = int(full_users) + int(standard_users)
-        license_utilization = format(float(float(in_use) / float(total_licenses))*float(100), '.2f')
         licenses_remaining = total_licenses - in_use
+
+        if int(total_licenses) > 0:
+            license_utilization = format(float(float(in_use) / float(total_licenses))*float(100), '.2f')
+        else:
+            license_utilization = 0
 
         total_standard += standard_users
 
